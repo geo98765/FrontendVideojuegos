@@ -17,6 +17,29 @@ html {
   ));
 }
 
+:root {
+  @include mat.toolbar-overrides((
+    container-background-color: (purple),
+    container-text-color: (white),
+  ));
+}
+
+.warm{
+  @include mat.theme(
+    (
+      color: mat.$orange-palette
+    )
+  )
+}
+
+.danger{
+  @include mat.theme(
+    (
+      color: mat.$red-palette
+    )
+  )
+}
+
 body {
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the

@@ -1,4 +1,4 @@
-// DTOs para Videojuegos
+
 export interface VideojuegoDTO {
   id: number;
   nombre: string;
@@ -18,7 +18,6 @@ export interface VideojuegoDTOCrear {
   imagen?: File;
 }
 
-// DTOs para Usuarios (SIN ROL)
 export interface UsuarioDTO {
   id: number;
   nombre: string;
@@ -47,7 +46,6 @@ export interface CompraDTOCrear {
   videojuegoId: number;
 }
 
-// DTOs para Comentarios
 export interface ComentarioDTO {
   id: number;
   usuario: string;

@@ -23,12 +23,10 @@ export class VideojuegosService {
   }
 
   postVideojuego(videojuego: FormData): Observable<any> {
-  // ✅ AGREGAR: /crearConImagen
   return this.http.post<any>(`${this.apiUrl}/crearConImagen`, videojuego);
 }
 
 putVideojuego(id: number, videojuego: FormData): Observable<any> {
-  // ✅ AGREGAR: /{id}/actualizarConImagen
   return this.http.put<any>(`${this.apiUrl}/${id}/actualizarConImagen`, videojuego);
 }
   deleteVideojuego(id: number): Observable<void> {

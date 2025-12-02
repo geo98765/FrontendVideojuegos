@@ -3,7 +3,6 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CompraDTO, CompraDTOCrear, ComentarioDTO, ComentarioDTOCrear } from '../models/VideojuegoDTO';
 
-// ==================== COMPRAS SERVICE ====================
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +27,6 @@ export class ComprasService {
   }
 }
 
-// ==================== COMENTARIOS SERVICE ====================
 @Injectable({
   providedIn: 'root'
 })

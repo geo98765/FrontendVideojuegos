@@ -16,27 +16,18 @@ import { FormAgregarComentario } from './components/form-agregar-comentario/form
 
 export const routes: Routes = [
   { path: '', component: Home },
-  
-  // Rutas de Videojuegos
   { path: 'videojuegos', component: ListVideojuegos },
   { path: 'videojuegos/crear', component: FormAgregarVideojuego },
   { path: 'videojuegos/actualizar/:id', component: FormActualizarVideojuego },
   { path: 'videojuegos/eliminar/:id', component: ConfirmarEliminacionVideojuego },
   { path: 'videojuegos/detalle/:id', component: DetalleVideojuego },
-  
-  // Rutas de Usuarios
   { path: 'usuarios', component: ListUsuarios },
   { path: 'usuarios/crear', component: FormAgregarUsuario },
   { path: 'usuarios/actualizar/:id', component: FormActualizarUsuario },
   { path: 'usuarios/eliminar/:id', component: ConfirmarEliminacionUsuario },
-  
-  // Rutas de Compras
   { path: 'compras', component: ListCompras },
   { path: 'compras/realizar', component: FormRealizarCompra },
-  
-  // Rutas de Comentarios
   { path: 'comentarios', component: ListComentarios },
   { path: 'comentarios/crear', component: FormAgregarComentario },
   
-  { path: '**', redirectTo: '' }
 ];
