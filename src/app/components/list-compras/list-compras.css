@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.precio {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1.1rem;
+}

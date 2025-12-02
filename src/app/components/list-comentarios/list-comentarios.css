@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.comentario-texto {
+  display: block;
+  max-width: 400px;
+  line-height: 1.4;
+}

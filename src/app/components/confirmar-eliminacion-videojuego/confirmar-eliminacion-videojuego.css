@@ -1,0 +1,73 @@
+.confirm-container {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+mat-card {
+  margin-top: 20px;
+}
+
+.warning-message {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.warning-message p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #856404;
+}
+
+.videojuego-info {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.caratula {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.info-details {
+  flex: 1;
+}
+
+.info-details h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.info-details p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.warning-note {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.warning-note p {
+  margin: 0;
+  color: #721c24;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}

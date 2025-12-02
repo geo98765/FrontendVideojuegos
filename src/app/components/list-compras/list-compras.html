@@ -1,0 +1,53 @@
+<p>list-compras works!</p>
+<div class="container">
+  <h2>🛒 Historial de Compras</h2>
+  <a routerLink="/compras/realizar" mat-flat-button color="primary">Realizar Nueva Compra</a>
+
+  <table mat-table [dataSource]="comprasDataSource" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usuario">
+      <th mat-header-cell *matHeaderCellDef> Usuario </th>
+      <td mat-cell *matCellDef="let element"> 
+        <strong>{{element.usuario}}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="videojuego">
+      <th mat-header-cell *matHeaderCellDef> Videojuego </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.videojuego}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span class="precio">{{element.precio | currency}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaCompra">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.fechaCompra | date:'dd/MM/yyyy HH:mm'}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Ver </th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="/videojuegos/detalle/{{element.videojuegoId}}" mat-button color="primary">
+          Ver Juego
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

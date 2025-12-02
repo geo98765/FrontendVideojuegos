@@ -1,0 +1,40 @@
+<div class="confirm-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>⚠️ Confirmar Eliminación</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      @if (videojuego) {
+        <div class="warning-message">
+          <p>¿Está seguro que desea eliminar el siguiente videojuego?</p>
+        </div>
+
+        <div class="videojuego-info">
+          @if (videojuego.urlImg) {
+            <img [src]="videojuego.urlImg" [alt]="videojuego.nombre" class="caratula">
+          }
+          
+          <div class="info-details">
+            <h3>{{videojuego.nombre}}</h3>
+            <p><strong>Descripción:</strong> {{videojuego.descripcion}}</p>
+            <p><strong>Tamaño:</strong> {{videojuego.tamanoGb}} GB</p>
+            <p><strong>Precio:</strong> {{videojuego.precio | currency}}</p>
+            <p><strong>Descargas:</strong> {{videojuego.descargas}}</p>
+          </div>
+        </div>
+
+        <div class="warning-note">
+          <p><strong>⚠️ Advertencia:</strong> Esta acción no se puede deshacer. Se eliminarán todos los datos relacionados con este videojuego.</p>
+        </div>
+      }
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="warn" (click)="eliminar()">
+        Eliminar Videojuego
+      </button>
+      <a mat-stroked-button routerLink="/videojuegos">
+        Cancelar
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>

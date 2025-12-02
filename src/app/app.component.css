@@ -1,0 +1,36 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.logo-text {
+  margin-left: 5px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-buttons a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content-container {
+  min-height: calc(100vh - 64px);
+  background-color: #f5f5f5;
+}
+
+mat-icon {
+  margin-right: 5px;
+}

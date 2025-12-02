@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/" mat-button class="logo-button">
+      <mat-icon>sports_esports</mat-icon>
+      <span class="logo-text">Games Store</span>
+    </a>
+  </span>
+  
+  <span class="spacer"></span>
+  
+  <div class="nav-buttons">
+    <a routerLink="/" mat-button>
+      <mat-icon>home</mat-icon>
+      Inicio
+    </a>
+    <a routerLink="/videojuegos" mat-button>
+      <mat-icon>videogame_asset</mat-icon>
+      Videojuegos
+    </a>
+    <a routerLink="/usuarios" mat-button>
+      <mat-icon>people</mat-icon>
+      Usuarios
+    </a>
+    <a routerLink="/compras" mat-button>
+      <mat-icon>shopping_cart</mat-icon>
+      Compras
+    </a>
+    <a routerLink="/comentarios" mat-button>
+      <mat-icon>comment</mat-icon>
+      Comentarios
+    </a>
+  </div>
+</mat-toolbar>
+
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

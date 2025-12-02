@@ -1,0 +1,56 @@
+<div class="confirm-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>⚠️ Confirmar Eliminación de Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      @if (usuario) {
+        <div class="warning-message">
+          <mat-icon>warning</mat-icon>
+          <p>¿Está seguro que desea eliminar el siguiente usuario?</p>
+        </div>
+
+        <div class="usuario-info">
+          <div class="avatar-icon">
+            <mat-icon>person</mat-icon>
+          </div>
+          
+          <div class="info-details">
+            <h3>{{usuario.nombre}}</h3>
+            <p class="info-item">
+              <mat-icon>email</mat-icon>
+              <span>{{usuario.correo}}</span>
+            </p>
+            <p class="info-item">
+              <mat-icon>fingerprint</mat-icon>
+              <span>ID: {{usuario.id}}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="warning-note">
+          <mat-icon>error_outline</mat-icon>
+          <div>
+            <p><strong>⚠️ Advertencia:</strong></p>
+            <p>Esta acción no se puede deshacer. Se eliminarán:</p>
+            <ul>
+              <li>Los datos del usuario</li>
+              <li>Todas sus compras (si las tiene)</li>
+              <li>Todos sus comentarios (si los tiene)</li>
+            </ul>
+          </div>
+        </div>
+      }
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="warn" (click)="eliminar()">
+        <mat-icon>delete_forever</mat-icon>
+        Eliminar Usuario
+      </button>
+      <a mat-stroked-button routerLink="/usuarios">
+        <mat-icon>cancel</mat-icon>
+        Cancelar
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>

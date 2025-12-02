@@ -1,0 +1,68 @@
+<div class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Agregar Nuevo Videojuego</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre del Juego</mat-label>
+          <input matInput formControlName="nombre" placeholder="Ej: The Witcher 3">
+          @if (form.controls.nombre.hasError('required')) {
+            <mat-error>El nombre es obligatorio</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="descripcion" rows="4" 
+                    placeholder="Describe el videojuego..."></textarea>
+          @if (form.controls.descripcion.hasError('required')) {
+            <mat-error>La descripción es obligatoria</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Tamaño (GB)</mat-label>
+          <input matInput type="number" formControlName="tamanoGb" step="0.1" placeholder="Ej: 45.5">
+          @if (form.controls.tamanoGb.hasError('required')) {
+            <mat-error>El tamaño es obligatorio</mat-error>
+          }
+          @if (form.controls.tamanoGb.hasError('min')) {
+            <mat-error>El tamaño debe ser mayor a 0</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Precio (USD)</mat-label>
+          <input matInput type="number" formControlName="precio" step="0.01" placeholder="Ej: 59.99">
+          @if (form.controls.precio.hasError('required')) {
+            <mat-error>El precio es obligatorio</mat-error>
+          }
+          @if (form.controls.precio.hasError('min')) {
+            <mat-error>El precio debe ser mayor o igual a 0</mat-error>
+          }
+        </mat-form-field>
+
+        <div class="file-input-container">
+          <label for="file-input" class="file-input-label">Carátula del Juego</label>
+          <input id="file-input" type="file" accept="image/*" 
+                 (change)="onFileSelected($event)" class="file-input">
+          @if (imagenPreview) {
+            <img [src]="imagenPreview" alt="Preview" class="image-preview">
+          }
+        </div>
+
+        <div class="button-group">
+          <button mat-flat-button color="primary" type="submit">
+            Guardar Videojuego
+          </button>
+          <a mat-stroked-button routerLink="/videojuegos" type="button">
+            Cancelar
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

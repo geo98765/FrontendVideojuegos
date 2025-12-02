@@ -1,0 +1,65 @@
+<div class="container">
+  <h2>🎮 Catálogo de Videojuegos</h2>
+  <a routerLink="/videojuegos/crear" mat-flat-button color="primary">Agregar Videojuego</a>
+
+  <table mat-table [dataSource]="videojuegosDataSource" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="imagen">
+      <th mat-header-cell *matHeaderCellDef> Carátula </th>
+      <td mat-cell *matCellDef="let element">
+        @if(element.urlImg) {
+          <img class="caratula" [src]="element.urlImg" [alt]="element.nombre">
+        } @else {
+          <div class="no-image">Sin imagen</div>
+        }
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> 
+        <strong>{{element.nombre}}</strong>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripción </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span class="descripcion">{{element.descripcion}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tamanoGb">
+      <th mat-header-cell *matHeaderCellDef> Tamaño </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.tamanoGb}} GB
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span class="precio">{{element.precio | currency}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descargas">
+      <th mat-header-cell *matHeaderCellDef> Descargas </th>
+      <td mat-cell *matCellDef="let element"> 
+        <span class="badge-descargas">{{element.descargas}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="/videojuegos/detalle/{{element.id}}" mat-button color="primary">Ver</a>
+        <a routerLink="/videojuegos/actualizar/{{element.id}}" mat-button color="accent">Editar</a>
+        <a routerLink="/videojuegos/eliminar/{{element.id}}" mat-button color="warn">Eliminar</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

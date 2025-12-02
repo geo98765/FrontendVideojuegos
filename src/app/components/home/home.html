@@ -1,0 +1,62 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>🎮 Games Store</h1>
+    <p>Sistema de gestión de videojuegos, usuarios, compras y comentarios</p>
+  </div>
+
+  <div class="cards-container">
+    <mat-card class="feature-card">
+      <mat-card-header>
+        <mat-icon class="card-icon">videogame_asset</mat-icon>
+        <mat-card-title>Videojuegos</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Administra el catálogo completo de videojuegos con imágenes, precios, descripciones y estadísticas de descargas.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" routerLink="/videojuegos">Ver Videojuegos</a>
+        <a mat-stroked-button routerLink="/videojuegos/crear">Agregar Nuevo</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+      <mat-card-header>
+        <mat-icon class="card-icon">people</mat-icon>
+        <mat-card-title>Usuarios</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Gestiona los usuarios del sistema que pueden realizar compras y dejar comentarios sobre los juegos.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" routerLink="/usuarios">Ver Usuarios</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+      <mat-card-header>
+        <mat-icon class="card-icon">shopping_cart</mat-icon>
+        <mat-card-title>Compras</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Visualiza y administra todas las compras realizadas en el sistema con historial detallado.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" routerLink="/compras">Ver Compras</a>
+        <a mat-stroked-button routerLink="/compras/realizar">Realizar Compra</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+      <mat-card-header>
+        <mat-icon class="card-icon">comment</mat-icon>
+        <mat-card-title>Comentarios</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Administra los comentarios y opiniones de los usuarios sobre cada videojuego.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" routerLink="/comentarios">Ver Comentarios</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

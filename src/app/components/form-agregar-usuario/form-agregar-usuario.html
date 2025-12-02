@@ -1,0 +1,53 @@
+<div class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Agregar Nuevo Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput formControlName="nombre" placeholder="Ej: Juan Pérez">
+          @if (form.controls.nombre.hasError('required')) {
+            <mat-error>El nombre es obligatorio</mat-error>
+          }
+          @if (form.controls.nombre.hasError('maxlength')) {
+            <mat-error>Máximo 50 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput type="email" formControlName="correo" placeholder="ejemplo@correo.com">
+          @if (form.controls.correo.hasError('required')) {
+            <mat-error>El correo es obligatorio</mat-error>
+          }
+          @if (form.controls.correo.hasError('email')) {
+            <mat-error>Ingrese un correo válido</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="contrasena" placeholder="Mínimo 6 caracteres">
+          @if (form.controls.contrasena.hasError('required')) {
+            <mat-error>La contraseña es obligatoria</mat-error>
+          }
+          @if (form.controls.contrasena.hasError('minlength')) {
+            <mat-error>Mínimo 6 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <div class="button-group">
+          <button mat-flat-button color="primary" type="submit">
+            Guardar Usuario
+          </button>
+          <a mat-stroked-button routerLink="/usuarios" type="button">
+            Cancelar
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

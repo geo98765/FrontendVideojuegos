@@ -1,0 +1,100 @@
+<div class="detalle-container">
+  @if (videojuego) {
+    <div class="header-section">
+      <a routerLink="/videojuegos" mat-button>
+        <mat-icon>arrow_back</mat-icon>
+        Volver a la lista
+      </a>
+    </div>
+
+    <mat-card class="main-card">
+      <div class="videojuego-header">
+        <div class="image-section">
+          @if (videojuego.urlImg) {
+            <img [src]="videojuego.urlImg" [alt]="videojuego.nombre" class="caratula-grande">
+          } @else {
+            <div class="no-image-grande">Sin imagen</div>
+          }
+        </div>
+
+        <div class="info-section">
+          <h1>{{videojuego.nombre}}</h1>
+          
+          <div class="stats-chips">
+            <mat-chip-set>
+              <mat-chip>
+                <mat-icon>storage</mat-icon>
+                {{videojuego.tamanoGb}} GB
+              </mat-chip>
+              <mat-chip>
+                <mat-icon>download</mat-icon>
+                {{videojuego.descargas}} descargas
+              </mat-chip>
+              <mat-chip highlighted>
+                <mat-icon>attach_money</mat-icon>
+                {{videojuego.precio | currency}}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="description">
+            <h3>Descripción</h3>
+            <p>{{videojuego.descripcion}}</p>
+          </div>
+
+          <div class="extra-info">
+            <p><mat-icon>calendar_today</mat-icon> Agregado: {{videojuego.creadoEn | date:'dd/MM/yyyy'}}</p>
+            <p><mat-icon>shopping_cart</mat-icon> Total de compras: {{videojuego.totalCompras}}</p>
+          </div>
+
+          <div class="action-buttons">
+            <a routerLink="/videojuegos/actualizar/{{videojuego.id}}" mat-flat-button color="primary">
+              <mat-icon>edit</mat-icon>
+              Editar
+            </a>
+            <a routerLink="/videojuegos/eliminar/{{videojuego.id}}" mat-stroked-button color="warn">
+              <mat-icon>delete</mat-icon>
+              Eliminar
+            </a>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Sección de Comentarios -->
+    <mat-card class="comentarios-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>comment</mat-icon>
+          Comentarios ({{videojuego.comentarios?.length || 0}})
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        @if (videojuego.comentarios && videojuego.comentarios.length > 0) {
+          <div class="comentarios-list">
+            @for (comentario of videojuego.comentarios; track comentario.comentarioId) {
+              <div class="comentario-item">
+                <div class="comentario-header">
+                  <strong>{{comentario.nombreUsuario}}</strong>
+                  <span class="fecha">{{comentario.fecha | date:'dd/MM/yyyy HH:mm'}}</span>
+                </div>
+                <p class="comentario-texto">{{comentario.comentario}}</p>
+                <mat-divider></mat-divider>
+              </div>
+            }
+          </div>
+        } @else {
+          <p class="no-comentarios">No hay comentarios para este videojuego.</p>
+        }
+      </mat-card-content>
+      <mat-card-actions>
+        <a routerLink="/comentarios/crear" mat-flat-button color="accent">
+          <mat-icon>add_comment</mat-icon>
+          Agregar Comentario
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>
