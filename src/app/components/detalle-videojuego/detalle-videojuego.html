@@ -10,11 +10,7 @@
     <mat-card class="main-card">
       <div class="videojuego-header">
         <div class="image-section">
-          @if (videojuego.urlImg) {
             <img [src]="videojuego.urlImg" [alt]="videojuego.nombre" class="caratula-grande">
-          } @else {
-            <div class="no-image-grande">Sin imagen</div>
-          }
         </div>
 
         <div class="info-section">
@@ -23,15 +19,12 @@
           <div class="stats-chips">
             <mat-chip-set>
               <mat-chip>
-                <mat-icon>storage</mat-icon>
                 {{videojuego.tamanoGb}} GB
               </mat-chip>
               <mat-chip>
-                <mat-icon>download</mat-icon>
                 {{videojuego.descargas}} descargas
               </mat-chip>
               <mat-chip highlighted>
-                <mat-icon>attach_money</mat-icon>
                 {{videojuego.precio | currency}}
               </mat-chip>
             </mat-chip-set>
@@ -45,8 +38,8 @@
           </div>
 
           <div class="extra-info">
-            <p><mat-icon>calendar_today</mat-icon> Agregado: {{videojuego.creadoEn | date:'dd/MM/yyyy'}}</p>
-            <p><mat-icon>shopping_cart</mat-icon> Total de compras: {{videojuego.totalCompras}}</p>
+            <p>Agregado: {{videojuego.creadoEn | date:'dd/MM/yyyy'}}</p>
+            <p>Total de compras: {{videojuego.totalCompras}}</p>
           </div>
 
           <div class="action-buttons">
@@ -63,13 +56,9 @@
       </div>
     </mat-card>
 
-    <!-- Secion de Comentarios -->
     <mat-card class="comentarios-card">
       <mat-card-header>
-        <mat-card-title>
-          <mat-icon>comment</mat-icon>
-          Comentarios ({{videojuego.comentarios?.length || 0}})
-        </mat-card-title>
+        <mat-card-title>Comentarios ({{videojuego.comentarios?.length || 0}})</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         @if (videojuego.comentarios && videojuego.comentarios.length > 0) {

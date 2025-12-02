@@ -52,7 +52,7 @@ export class FormRealizarCompra implements OnInit {
 
   onSubmit(): void {
     if (!this.form.valid) {
-      alert('Por favor seleccione un usuario y un videojuego');
+      alert('seleccione un usuario y un videojuego');
       return;
     }
 

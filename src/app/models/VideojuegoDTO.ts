@@ -30,7 +30,6 @@ export interface UsuarioDTOCrear {
   contrasena: string;
 }
 
-// DTOs para Compras
 export interface CompraDTO {
   id: number;
   usuarioId: number;

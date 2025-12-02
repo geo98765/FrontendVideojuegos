@@ -34,7 +34,7 @@ export class FormAgregarUsuario {
 
   onSubmit(): void {
     if (!this.form.valid) {
-      alert('Por favor complete todos los campos correctamente');
+      alert('complete todos los campos correctamente');
       return;
     }
 

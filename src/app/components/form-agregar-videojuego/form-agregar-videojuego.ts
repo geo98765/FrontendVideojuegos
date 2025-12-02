@@ -41,7 +41,6 @@ export class FormAgregarVideojuego {
     if (file) {
       this.archivoSeleccionado = file;
       
-      // Preview de la imagen
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imagenPreview = e.target.result;
@@ -52,7 +51,7 @@ export class FormAgregarVideojuego {
 
   onSubmit(): void {
   if (!this.form.valid) {
-    alert('Por favor complete todos los campos requeridos');
+    alert('complete todos los campos requeridos');
     return;
   }
 

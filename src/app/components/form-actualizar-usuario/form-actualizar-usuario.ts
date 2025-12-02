@@ -33,7 +33,7 @@ export class FormActualizarUsuario implements OnInit {
   form = this.formBuilder.group({
     nombre: ['', [Validators.required, Validators.maxLength(50)]],
     correo: ['', [Validators.required, Validators.email, Validators.maxLength(150)]],
-    contrasena: ['', [Validators.minLength(6)]] // No requerido en actualización
+    contrasena: ['', [Validators.minLength(6)]]
   });
 
   ngOnInit(): void {
@@ -69,7 +69,7 @@ export class FormActualizarUsuario implements OnInit {
     const usuario: UsuarioDTOCrear = {
       nombre: this.form.value.nombre!,
       correo: this.form.value.correo!,
-      contrasena: this.form.value.contrasena || '' // Si está vacío, la API debe mantener la contraseña actual
+      contrasena: this.form.value.contrasena || ''
     };
 
     this.usuariosService.putUsuario(Number(this.id), usuario).subscribe({
