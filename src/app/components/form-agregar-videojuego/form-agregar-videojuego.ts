@@ -51,29 +51,29 @@ export class FormAgregarVideojuego {
   }
 
   onSubmit(): void {
-    if (!this.form.valid) {
-      alert('Por favor complete todos los campos requeridos');
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('nombre', this.form.value.nombre!);
-    formData.append('descripcion', this.form.value.descripcion!);
-    formData.append('tamanoGb', this.form.value.tamanoGb!.toString());
-    formData.append('precio', this.form.value.precio!.toString());
-    
-    if (this.archivoSeleccionado) {
-      formData.append('imagen', this.archivoSeleccionado);
-    }
-
-    this.videojuegosService.postVideojuego(formData).subscribe({
-      next: () => {
-        this.router.navigate(['/videojuegos']);
-      },
-      error: (error) => {
-        console.error('Error al crear videojuego:', error);
-        alert('Error al crear el videojuego');
-      }
-    });
+  if (!this.form.valid) {
+    alert('Por favor complete todos los campos requeridos');
+    return;
   }
+
+  const formData = new FormData();
+  formData.append('nombre', this.form.value.nombre!);
+  formData.append('descripcion', this.form.value.descripcion!);
+  formData.append('tamanoGb', this.form.value.tamanoGb!.toString());
+  formData.append('precio', this.form.value.precio!.toString());
+  
+  if (this.archivoSeleccionado) {
+    formData.append('UrlImg', this.archivoSeleccionado);
+  }
+
+  this.videojuegosService.postVideojuego(formData).subscribe({
+    next: () => {
+      this.router.navigate(['/videojuegos']);
+    },
+    error: (error) => {
+      console.error('Error al crear videojuego:', error);
+      alert('Error al crear el videojuego');
+    }
+  });
+}
 }

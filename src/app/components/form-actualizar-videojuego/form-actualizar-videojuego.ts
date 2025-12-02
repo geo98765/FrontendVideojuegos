@@ -94,7 +94,7 @@ export class FormActualizarVideojuego implements OnInit {
     formData.append('precio', this.form.value.precio!.toString());
     
     if (this.archivoSeleccionado) {
-      formData.append('imagen', this.archivoSeleccionado);
+      formData.append('UrlImg', this.archivoSeleccionado);
     }
 
     this.videojuegosService.putVideojuego(Number(this.id), formData).subscribe({
